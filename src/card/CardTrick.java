@@ -45,5 +45,27 @@ public class CardTrick {
         } else {
             System.out.println("Sorry, your card is not in the magic hand.");
         }
+
+        // Lucky card (hardcoded)
+Card luckyCard = new Card();
+luckyCard.setValue(11);         // Choose any value
+luckyCard.setSuit("Hearts");    // Choose any suit
+
+// Search for lucky card
+boolean found = false;
+for (Card c : magicHand) {
+    if (c.getValue() == luckyCard.getValue() && c.getSuit().equals(luckyCard.getSuit())) {
+        found = true;
+        break;
+    }
+}
+
+if (found) {
+    System.out.println("Congratulations! The lucky card is in the magic hand!");
+} else {
+    System.out.println("Sorry, the lucky card is not in the magic hand.");
+}
+
+
     }
 }
